@@ -37,15 +37,16 @@ if [ ! -f ".env.local" ]; then
   cp .env.example .env.local
 fi
 
-# Install dependencies with fallbacks for different package managers
-echo "Installing dependencies..."
-if command -v pnpm &> /dev/null; then
-  pnpm install
-elif command -v yarn &> /dev/null; then
-  yarn install
-else
-  npm install
+# Check if pnpm is installed
+if ! command -v pnpm &> /dev/null; then
+  echo "❌ Error: pnpm is required but not installed."
+  echo "💡 Install pnpm with: npm install -g pnpm"
+  exit 1
 fi
+
+# Install dependencies with pnpm
+echo "📦 Installing dependencies with pnpm..."
+pnpm install
 
 echo "✅ Project ready! Run 'npm run dev' to start the development server"
 
