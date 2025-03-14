@@ -9,9 +9,15 @@ if [ ! -f ".env.local" ]; then
   cp .env.example .env.local
 fi
 
-# Install dependencies
+# Install dependencies with fallbacks for different package managers
 echo "📦 Installing dependencies..."
-npm install
+if command -v pnpm &> /dev/null; then
+  pnpm install
+elif command -v yarn &> /dev/null; then
+  yarn install
+else
+  npm install
+fi
 
 # Make setup.sh executable
 chmod +x setup.sh
