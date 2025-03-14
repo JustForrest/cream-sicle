@@ -23,8 +23,7 @@
     },
 
     // Set up environment automatically
-    "postCreateCommand": "npm install",
-    "postStartCommand": "cp .env.example .env.local",
+    "postCreateCommand": "bash .devcontainer/scripts/post-create.sh",
     "waitFor": "postCreateCommand",
     
     // Configure VS Code settings and extensions
@@ -54,7 +53,8 @@
                 },
                 "[typescriptreact]": {
                     "editor.defaultFormatter": "esbenp.prettier-vscode"
-                }
+                },
+                "terminal.integrated.defaultProfile.linux": "zsh"
             }
         }
     },

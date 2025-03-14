@@ -11,7 +11,8 @@ RUN curl -fsSL https://github.com/supabase/cli/releases/download/v1.115.5/supaba
     && dpkg -i supabase.deb \
     && rm supabase.deb
 
-# Optional: Set up oh-my-zsh for a better terminal experience
-RUN apt-get update && apt-get install -y zsh && \
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
-    chsh -s $(which zsh)
+# Configure ZSH (don't reinstall since it's already in the base image)
+RUN if [ -d "/root/.oh-my-zsh" ]; then \
+    echo "Oh My Zsh is already installed, configuring..." \
+    && echo 'export PATH=$PATH:/workspaces/cream-sicle/node_modules/.bin' >> ~/.zshrc; \
+    fi
