@@ -28,6 +28,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  if (!hasEnvVars) {
+    console.error(
+      "Required environment variables are missing. Check .env.local file."
+    );
+  }
+
   return (
     <html lang="en" className={geistSans.className} suppressHydrationWarning>
       <body className="bg-background text-foreground">
