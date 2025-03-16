@@ -37,7 +37,7 @@ else
   fi
   
   # Setup environment-specific configurations
-  ./runtime-setup.sh
+  "$PWD/.devcontainer/scripts/runtime-setup.sh"
 fi
 
 echo "Setup script completed"

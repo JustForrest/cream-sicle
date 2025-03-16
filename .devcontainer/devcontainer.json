@@ -30,10 +30,10 @@
   },
 
   // Set up environment automatically
-  "onCreateCommand": "chmod +x .devcontainer/scripts/*.sh && .devcontainer/scripts/on-create.sh",
-  "postCreateCommand": "chmod +x *.sh && ./setup.sh",
-  "postStartCommand": "./runtime-setup.sh",
-  "postAttachCommand": "./health-check.sh",
+  "onCreateCommand": ".devcontainer/scripts/set-permissions.sh && .devcontainer/scripts/on-create.sh",
+  "postCreateCommand": "chmod +x .devcontainer/scripts/*.sh && .devcontainer/scripts/post-create.sh",
+  "postStartCommand": ".devcontainer/scripts/runtime-setup.sh",
+  "postAttachCommand": ".devcontainer/scripts/health-check.sh",
   "waitFor": "onCreateCommand",
 
   // Configure VS Code settings and extensions
@@ -48,8 +48,7 @@
         "github.vscode-pull-request-github",
         "ms-vscode.vscode-typescript",
         "ms-vscode.js-debug",
-        "ms-azuretools.vscode-docker",
-        "dbaeumer.vscode-eslint"
+        "ms-azuretools.vscode-docker"
       ],
       "settings": {
         "editor.formatOnSave": true,

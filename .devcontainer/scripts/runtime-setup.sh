@@ -33,9 +33,19 @@ if [ "$CODESPACES_PREBUILD" != "true" ]; then
 fi
 
 # Setup environment variables if needed
-if [ ! -f ".env.local" ]; then
+if [ ! -f "$PWD/.env.local" ]; then
   echo "Creating .env.local from example file"
-  cp .env.example .env.local
+  # Check if example file exists
+  if [ -f "$PWD/.env.example" ]; then
+    cp "$PWD/.env.example" "$PWD/.env.local"
+  else
+    # Create a basic .env.local if no example exists
+    cat > "$PWD/.env.local" << EOF
+# Update these with your Supabase details from your project settings > API
+NEXT_PUBLIC_SUPABASE_URL=your-project-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+EOF
+  fi
   
   # Extract and display Supabase credentials if available
   if command -v supabase &> /dev/null && [ "$CODESPACES_PREBUILD" != "true" ]; then
