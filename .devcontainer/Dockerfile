@@ -17,12 +17,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # Install global Node packages
 RUN npm install -g npm@latest next@latest supabase@latest
 
-# Pre-cache common Next.js dependencies to speed up first install
-WORKDIR /tmp/cache
-COPY package.json package-lock.json* ./
-RUN npm ci || echo "Pre-install failed, will be handled during post-create"
-RUN rm -rf /tmp/cache
-
 # Configure ZSH (don't reinstall since it's already in the base image)
 RUN if [ -d "/root/.oh-my-zsh" ]; then \
     echo "Oh My Zsh is already installed, configuring..." \
