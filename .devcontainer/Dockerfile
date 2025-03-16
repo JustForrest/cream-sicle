@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/javascript-node:0-22
+FROM mcr.microsoft.com/devcontainers/javascript-node:0-20
 
 # Set environment variables
 ENV NODE_ENV=development
