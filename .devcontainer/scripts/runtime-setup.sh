@@ -63,4 +63,16 @@ EOF
   fi
 fi
 
+# Start supabase
+echo "Starting Supabase..."
+cd /workspaces/cream-sicle
+npx supabase start
+
+# Start Next.js in the background
+echo "Starting Next.js development server..."
+cd /workspaces/cream-sicle
+nohup npm run dev > /tmp/nextjs.log 2>&1 &
+
+echo "Development environment is ready!"
+
 echo "Runtime setup completed"
