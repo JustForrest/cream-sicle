@@ -2,7 +2,6 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
   "name": "Next.js with Supabase",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
 
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {},
