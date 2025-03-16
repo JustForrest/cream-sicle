@@ -1,44 +1,32 @@
-[16:19:29.976] Cloning github.com/JustForrest/cream-sicle (Branch: main, Commit: 81fa30c)
-[16:19:30.460] Cloning completed: 484.000ms
-[16:19:32.734] Restored build cache from previous deployment (FDrLpSEzQJ7jYPPwqMYj5BN5nWUb)
-[16:19:32.827] Running build in Washington, D.C., USA (East) – iad1
-[16:19:33.281] Running "vercel build"
-[16:19:33.649] Vercel CLI 41.3.2
-[16:19:33.966] Installing dependencies...
-[16:19:36.906] 
-[16:19:36.906] added 1 package in 3s
-[16:19:36.907] 
-[16:19:36.907] 158 packages are looking for funding
-[16:19:36.907]   run `npm fund` for details
-[16:19:36.943] Detected Next.js version: 15.2.2
-[16:19:36.948] Running "npm run build"
-[16:19:37.075] 
-[16:19:37.076] > build
-[16:19:37.076] > next build
-[16:19:37.077] 
-[16:19:37.956]    ▲ Next.js 15.2.2
-[16:19:37.957] 
-[16:19:38.039]    Creating an optimized production build ...
-[16:19:51.227]  ✓ Compiled successfully
-[16:19:51.233]    Linting and checking validity of types ...
-[16:19:55.991] 
-[16:19:55.992] Failed to compile.
-[16:19:55.992] 
-[16:19:55.992] ./app/(auth-pages)/sign-in/page.tsx
-[16:19:55.993] 14:12  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-[16:19:55.993] 
-[16:19:55.993] ./components/tutorial/connect-supabase-steps.tsx
-[16:19:55.993] 38:34  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-[16:19:55.993] 
-[16:19:55.994] ./components/tutorial/fetch-data-steps.tsx
-[16:19:55.994] 62:23  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-[16:19:55.995] 92:15  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-[16:19:55.995] 
-[16:19:55.995] ./components/tutorial/sign-up-user-steps.tsx
-[16:19:55.995] 15:15  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-[16:19:55.996] 15:40  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-[16:19:55.996] 82:47  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-[16:19:55.996] 
-[16:19:55.996] info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
-[16:19:56.030] Error: Command "npm run build" exited with 1
-[16:19:56.334] 
+[19:35:14.004] Cloning github.com/JustForrest/cream-sicle (Branch: main, Commit: 00defae)
+[19:35:14.701] Cloning completed: 692.000ms
+[19:35:16.797] Restored build cache from previous deployment (6DXtwXsNrB9oB9BvRtZDFFGVB5qn)
+[19:35:16.883] Running build in Washington, D.C., USA (East) – iad1
+[19:35:17.451] Running "vercel build"
+[19:35:17.835] Vercel CLI 41.3.2
+[19:35:18.162] Installing dependencies...
+[19:35:19.902] 
+[19:35:19.904] up to date in 2s
+[19:35:19.904] 
+[19:35:19.905] 158 packages are looking for funding
+[19:35:19.907]   run `npm fund` for details
+[19:35:19.940] Detected Next.js version: 15.2.2
+[19:35:19.945] Running "npm run build"
+[19:35:20.117] 
+[19:35:20.118] > build
+[19:35:20.118] > next build
+[19:35:20.118] 
+[19:35:21.000]    ▲ Next.js 15.2.2
+[19:35:21.001] 
+[19:35:21.079]    Creating an optimized production build ...
+[19:35:30.165] Failed to compile.
+[19:35:30.165] 
+[19:35:30.165] ./app/layout.tsx
+[19:35:30.165] Module not found: Can't resolve '@vercel/speed-insights/next'
+[19:35:30.165] 
+[19:35:30.165] https://nextjs.org/docs/messages/module-not-found
+[19:35:30.165] 
+[19:35:30.179] 
+[19:35:30.180] > Build failed because of webpack errors
+[19:35:30.215] Error: Command "npm run build" exited with 1
+[19:35:30.465] 
