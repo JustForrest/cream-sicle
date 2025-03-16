@@ -11,3 +11,7 @@ RUN if [ -d "/root/.oh-my-zsh" ]; then \
     echo "Oh My Zsh is already installed, configuring..." \
     && echo 'export PATH=$PATH:$PWD/node_modules/.bin' >> ~/.zshrc; \
     fi
+
+# Fix PATH configuration to use runtime path
+RUN echo 'export PATH=$PATH:$(pwd)/node_modules/.bin' >> /home/node/.zshrc && \
+    echo 'if [ -d "$PWD/node_modules/.bin" ]; then export PATH=$PATH:$PWD/node_modules/.bin; fi' >> /home/node/.zshrc

@@ -93,6 +93,32 @@ If you wish to just develop locally and not deploy to Vercel, [follow the steps 
 
 > Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
 
+## Development Environment Setup
+
+This repository is configured for GitHub Codespaces with prebuild support. Here's what you need to know:
+
+## First-Time Setup
+
+When you open the Codespace, these scripts will run automatically:
+
+1. `setup.sh` - Installs dependencies and optimizes the environment
+2. `runtime-setup.sh` - Starts development services like Supabase
+3. `health-check.sh` - Verifies all services are running correctly
+
+## Available Commands
+
+- `./env-setup.sh` - Configure or reset environment variables
+- `./health-check.sh` - Verify all services are running properly
+
+## Troubleshooting
+
+If Supabase services aren't starting:
+
+```bash
+supabase stop
+supabase start
+```
+
 ## Feedback and issues
 
 Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
