@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+echo "🔍 Running additional setup and verification checks..."
+
 # Check if the script is executable
 if [ ! -x "$(realpath $0)" ]; then
   echo "❌ This script is not executable. Run the following command to make it executable:"
@@ -30,21 +32,30 @@ check_supabase_cli() {
 # Run version check
 check_supabase_cli
 
-# Ensure the script is executable with: chmod +x setup.sh
-
+# Verify .env.local exists and has proper values
 if [ ! -f ".env.local" ]; then
-  echo "Creating .env.local from example..."
+  echo "⚠️ .env.local file not found. Creating from example..."
   cp .env.example .env.local
+  echo "⚠️ Please update your Supabase credentials in .env.local"
+else
+  # Check if .env.local has default values
+  if grep -q "your-project-url\|your-anon-key" .env.local; then
+    echo "⚠️ Your .env.local file contains default values. Please update with actual Supabase credentials."
+  else
+    echo "✅ .env.local file exists with custom values."
+  fi
 fi
 
-# Install dependencies with npm
-echo "📦 Installing dependencies with npm..."
-npm install
+# Verify node_modules exists
+if [ ! -d "node_modules" ]; then
+  echo "⚠️ node_modules not found. Running npm install..."
+  npm install
+else
+  echo "✅ Dependencies already installed."
+fi
 
-echo "✅ Project ready! Run 'npm run dev' to start the development server"
-
-# Provide additional information about Supabase setup
+echo "✅ Verification complete!"
 echo ""
-echo "🔑 Don't forget to configure your Supabase credentials in .env.local:"
+echo "🔑 Don't forget to verify your Supabase credentials in .env.local:"
 echo "NEXT_PUBLIC_SUPABASE_URL=your-project-url"
 echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key"

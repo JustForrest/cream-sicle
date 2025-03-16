@@ -6,7 +6,9 @@
 
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers-extra/features/supabase-cli:1": {}
+    "ghcr.io/devcontainers-extra/features/supabase-cli:1": {
+      "version": "1.115.5"
+    }
   },
 
   "build": {
@@ -14,11 +16,17 @@
   },
 
   // Forward ports for development
-  "forwardPorts": [3000],
+  "forwardPorts": [3000, 54321, 54322],
   "portsAttributes": {
     "3000": {
       "label": "Next.js",
       "onAutoForward": "openPreview"
+    },
+    "54321": {
+      "label": "Supabase API"
+    },
+    "54322": {
+      "label": "Supabase Studio"
     }
   },
 

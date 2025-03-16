@@ -9,12 +9,13 @@ if [ ! -f ".env.local" ]; then
   cp .env.example .env.local
 fi
 
-# Install dependencies with fallbacks for different package managers
+# Install dependencies
 echo "📦 Installing dependencies..."
 npm install
 
-# Make setup.sh executable
+# Make setup.sh executable for additional configuration if needed
 chmod +x setup.sh
 
 echo "✅ Environment setup complete!"
 echo "🚀 Run 'npm run dev' to start the development server"
+echo "💡 For additional configuration and checks, run './setup.sh'"
