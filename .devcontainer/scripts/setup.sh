@@ -7,6 +7,10 @@ echo "Running setup script..."
 if [ "$CODESPACES_PREBUILD" == "true" ]; then
   echo "Running in prebuild context, optimizing environment..."
   
+  # Force Next.js to skip ESLint during prebuild
+  export NEXT_DISABLE_ESLINT=1
+  echo "Disabling ESLint for prebuild process"
+  
   # Install dependencies for all workspaces
   echo "Pre-installing dependencies..."
   npm ci

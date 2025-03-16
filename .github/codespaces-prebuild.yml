@@ -1,0 +1,16 @@
+name: Prebuild Environment
+
+on:
+  workflow_dispatch:
+
+env:
+  NEXT_DISABLE_ESLINT: 1
+  NODE_ENV: production
+
+jobs:
+  prebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup environment
+        run: echo "Using NEXT_DISABLE_ESLINT=1 to bypass ESLint during prebuild"
