@@ -30,8 +30,8 @@
   },
 
   // Set up environment automatically
-  "onCreateCommand": "chmod +x .devcontainer/scripts/runtime-setup.sh && npm ci",
-  "postCreateCommand": "bash .devcontainer/scripts/runtime-setup.sh",
+  "onCreateCommand": "chmod +x .devcontainer/scripts/*.sh && .devcontainer/scripts/on-create.sh",
+  "postCreateCommand": ".devcontainer/scripts/post-create.sh",
   "waitFor": "onCreateCommand",
 
   // Configure VS Code settings and extensions

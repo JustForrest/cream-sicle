@@ -1,21 +1,18 @@
 #!/bin/bash
 set -e
 
-echo "🔧 Setting up development environment..."
+echo "Running postCreateCommand script..."
 
-# Ensure setup script is executable
-chmod +x .devcontainer/scripts/setup.sh
+# Import the setup logic
+source .devcontainer/scripts/setup.sh
 
-# Install dependencies
-echo "📦 Installing dependencies..."
-npm install
+# Additional post-creation tasks that should happen after setup
+echo "Setting up environment files..."
 
-# Run the main setup script
-echo "🔄 Running main setup script..."
-.devcontainer/scripts/setup.sh
+# Copy example env file if .env.local doesn't exist
+if [ ! -f .env.local ]; then
+  echo "Creating .env.local from example file"
+  cp .env.example .env.local
+fi
 
-echo "✅ Environment setup complete!"
-echo "🚀 Run 'npm run dev' to start the development server"
-
-# Print success message
-echo "Post-creation setup completed successfully!"
+echo "postCreateCommand completed successfully"
