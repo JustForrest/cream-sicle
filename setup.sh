@@ -37,16 +37,9 @@ if [ ! -f ".env.local" ]; then
   cp .env.example .env.local
 fi
 
-# Check if pnpm is installed
-if ! command -v pnpm &> /dev/null; then
-  echo "❌ Error: pnpm is required but not installed."
-  echo "💡 Install pnpm with: npm install -g pnpm"
-  exit 1
-fi
-
-# Install dependencies with pnpm
-echo "📦 Installing dependencies with pnpm..."
-pnpm install
+# Install dependencies with npm
+echo "📦 Installing dependencies with npm..."
+npm install
 
 echo "✅ Project ready! Run 'npm run dev' to start the development server"
 

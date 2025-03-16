@@ -11,13 +11,7 @@ fi
 
 # Install dependencies with fallbacks for different package managers
 echo "📦 Installing dependencies..."
-if command -v pnpm &> /dev/null; then
-  pnpm install
-elif command -v yarn &> /dev/null; then
-  yarn install
-else
-  npm install
-fi
+npm install
 
 # Make setup.sh executable
 chmod +x setup.sh

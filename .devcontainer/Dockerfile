@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm
 ENV NODE_ENV=development
 
 # Install additional global packages
-RUN npm install -g pnpm@latest next@latest
+RUN npm install -g next@latest
 
 # Install Supabase CLI
 RUN curl -fsSL https://github.com/supabase/cli/releases/download/v1.115.5/supabase_1.115.5_linux_amd64.deb -o supabase.deb \
