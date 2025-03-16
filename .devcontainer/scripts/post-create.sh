@@ -8,8 +8,8 @@ echo "📦 Installing dependencies..."
 npm install
 
 # Set up Supabase if needed
-echo "Setting up Supabase local development..."
-npx supabase init
+# echo "Setting up Supabase local development..."
+# npx supabase init
 
 # Create .env.local from example if it doesn't exist
 if [ ! -f ".env.local" ]; then
