@@ -14,8 +14,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
-# Install global Node packages
-RUN npm install -g npm@latest next@latest supabase@latest
+# Install global Node packages - use specific version instead of latest
+RUN npm install -g npm@10.2.4 next@latest supabase@latest
 
 # Configure ZSH (don't reinstall since it's already in the base image)
 RUN if [ -d "/root/.oh-my-zsh" ]; then \
