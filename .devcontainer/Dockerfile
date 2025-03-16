@@ -14,8 +14,14 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
-# Install global Node packages - use specific version instead of latest
-RUN npm install -g npm@10.2.4 next@latest supabase@latest
+# Option 1: Use an npm version compatible with Node 20.2.0
+RUN npm install -g npm@9.9.2 next@latest supabase@latest
+
+# OR Option 2: Update Node.js first, then install npm and tools
+# RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+#    && apt-get update \
+#    && apt-get install -y nodejs \
+#    && npm install -g npm@10.2.4 next@latest supabase@latest
 
 # Configure ZSH (don't reinstall since it's already in the base image)
 RUN if [ -d "/root/.oh-my-zsh" ]; then \
