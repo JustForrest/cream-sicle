@@ -5,7 +5,7 @@ import { createServerClient } from "@supabase/ssr";
 export async function updateSession(request: NextRequest) {
   try {
     // Create a Supabase client
-    const { supabaseClient } = createServerClient(
+    const supabaseClient = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
       {
