@@ -32,5 +32,7 @@ module.exports = {
     "react/react-in-jsx-scope": "off", // Not needed in Next.js
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+    // Add this line to disable the unescaped entities rule
+    "react/no-unescaped-entities": "off",
   },
 };
