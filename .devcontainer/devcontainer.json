@@ -34,8 +34,8 @@
   },
 
   // Set up environment automatically
-  "onCreateCommand": ".devcontainer/scripts/set-permissions.sh && .devcontainer/scripts/on-create.sh",
-  "postCreateCommand": "chmod +x .devcontainer/scripts/*.sh && .devcontainer/scripts/post-create.sh",
+  "onCreateCommand": "chmod +x .devcontainer/scripts/*.sh && .devcontainer/scripts/set-permissions.sh && .devcontainer/scripts/on-create.sh",
+  "postCreateCommand": ".devcontainer/scripts/post-create.sh",
   "postStartCommand": ".devcontainer/scripts/runtime-setup.sh",
   "postAttachCommand": ".devcontainer/scripts/health-check.sh",
   "waitFor": "onCreateCommand",
@@ -60,18 +60,7 @@
         "editor.codeActionsOnSave": {
           "source.fixAll.eslint": "always"
         },
-        "typescript.tsdk": "node_modules/typescript/lib",
-        "tailwindCSS.includeLanguages": {
-          "typescript": "javascript",
-          "typescriptreact": "javascript"
-        },
-        "[typescript]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
-        },
-        "[typescriptreact]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
-        },
-        "terminal.integrated.defaultProfile.linux": "zsh"
+        "typescript.tsdk": "node_modules/typescript/lib"
       }
     }
   },
