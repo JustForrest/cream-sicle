@@ -14,6 +14,10 @@
     "dockerfile": "Dockerfile"
   },
 
+  "mounts": [
+    "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+  ],
+
   // Forward ports for development
   "forwardPorts": [3000, 54321, 54322],
   "portsAttributes": {
