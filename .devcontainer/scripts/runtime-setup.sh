@@ -3,27 +3,17 @@ set -e
 
 echo "Running runtime setup..."
 
-# This script handles runtime-specific setup that should happen
-# after the container has been created or rebuilt
+# This script only runs in non-prebuild contexts
+# Focus on environment-specific setup
 
-# Check if running in prebuild context
-if [ "$CODESPACES_PREBUILD" == "true" ]; then
-  echo "Running in prebuild context, performing minimal setup"
-  # Do minimal setup necessary for pre-build
-else
-  echo "Setting up runtime environment"
-  
-  # Start services or perform other runtime initializations
-  # that shouldn't happen during prebuild
-  
-  # Example: Initialize development database
-  # supabase start
-
-  # Only run environment-specific setup like .env.local creation
-  if [ ! -f ".env.local" ]; then
-    cp .env.example .env.local
-    echo "⚠️ Please update .env.local with your Supabase credentials"
-  fi
+# Create .env.local if it doesn't exist (centralize this operation here only)
+if [ ! -f ".env.local" ]; then
+  echo "Creating .env.local from example file"
+  cp .env.example .env.local
+  echo "⚠️ Please update .env.local with your Supabase credentials"
 fi
+
+# Start services that shouldn't run during prebuild
+# supabase start
 
 echo "Runtime setup completed"

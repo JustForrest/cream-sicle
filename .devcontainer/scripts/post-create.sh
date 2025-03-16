@@ -3,16 +3,12 @@ set -e
 
 echo "Running postCreateCommand script..."
 
-# Import the setup logic
+# Import the setup logic with prebuild detection
 source .devcontainer/scripts/setup.sh
 
-# Additional post-creation tasks that should happen after setup
-echo "Setting up environment files..."
-
-# Copy example env file if .env.local doesn't exist
-if [ ! -f .env.local ]; then
-  echo "Creating .env.local from example file"
-  cp .env.example .env.local
+# Call runtime-setup only if not in prebuild mode
+if [ "$CODESPACES_PREBUILD" != "true" ]; then
+  source .devcontainer/scripts/runtime-setup.sh
 fi
 
 echo "postCreateCommand completed successfully"
