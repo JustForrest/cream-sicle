@@ -6,6 +6,7 @@ import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -77,6 +78,7 @@ export default function RootLayout({
             </div>
           </main>
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
