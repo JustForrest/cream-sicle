@@ -1,64 +1,66 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
-    "name": "Next.js with Supabase",
-    "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
-    
-    "features": {
-        "ghcr.io/devcontainers/features/github-cli:1": {},
-        "ghcr.io/devcontainers-extra/features/supabase-cli:1": {}
-    },
-    
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+  "name": "Next.js with Supabase",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
 
-    // Forward ports for development
-    "forwardPorts": [3000],
-    "portsAttributes": {
-        "3000": {
-            "label": "Next.js",
-            "onAutoForward": "openPreview"
-        }
-    },
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers-extra/features/supabase-cli:1": {}
+  },
 
-    // Set up environment automatically
-    "postCreateCommand": "bash .devcontainer/scripts/post-create.sh",
-    "waitFor": "postCreateCommand",
-    
-    // Configure VS Code settings and extensions
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "dbaeumer.vscode-eslint",
-                "esbenp.prettier-vscode",
-                "bradlc.vscode-tailwindcss",
-                "ms-vscode.vscode-typescript-next",
-                "dsznajder.es7-react-js-snippets",
-                "GitHub.copilot"
-            ],
-            "settings": {
-                "editor.formatOnSave": true,
-                "editor.defaultFormatter": "esbenp.prettier-vscode",
-                "editor.codeActionsOnSave": {
-                    "source.fixAll.eslint": true
-                },
-                "typescript.tsdk": "node_modules/typescript/lib",
-                "tailwindCSS.includeLanguages": {
-                    "typescript": "javascript",
-                    "typescriptreact": "javascript"
-                },
-                "[typescript]": {
-                    "editor.defaultFormatter": "esbenp.prettier-vscode"
-                },
-                "[typescriptreact]": {
-                    "editor.defaultFormatter": "esbenp.prettier-vscode"
-                },
-                "terminal.integrated.defaultProfile.linux": "zsh"
-            }
-        }
-    },
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
 
-    // Uncomment to connect as non-root user
-    // "remoteUser": "node"
+  // Forward ports for development
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Next.js",
+      "onAutoForward": "openPreview"
+    }
+  },
+
+  // Set up environment automatically
+  "postCreateCommand": "bash .devcontainer/scripts/post-create.sh",
+  "waitFor": "postCreateCommand",
+
+  // Configure VS Code settings and extensions
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "dsznajder.es7-react-js-snippets",
+        "GitHub.copilot",
+        "github.vscode-pull-request-github",
+        "ms-vscode.vscode-typescript",
+        "ms-vscode.js-debug"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true
+        },
+        "typescript.tsdk": "node_modules/typescript/lib",
+        "tailwindCSS.includeLanguages": {
+          "typescript": "javascript",
+          "typescriptreact": "javascript"
+        },
+        "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[typescriptreact]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      }
+    }
+  }
+
+  // Uncomment to connect as non-root user
+  // "remoteUser": "node"
 }
