@@ -68,7 +68,7 @@
         "terminal.integrated.defaultProfile.linux": "zsh"
       }
     }
-  }
+  } // <-- Add this comma here!
 
   // Uncomment to connect as non-root user
   // "remoteUser": "node"

@@ -4,7 +4,7 @@ set -e
 echo "🔧 Setting up development environment..."
 
 # Ensure setup script is executable
-chmod +x ./setup.sh
+chmod +x .devcontainer/scripts/setup.sh
 
 # Install dependencies
 echo "📦 Installing dependencies..."
@@ -12,7 +12,7 @@ npm install
 
 # Run the main setup script
 echo "🔄 Running main setup script..."
-./setup.sh
+.devcontainer/scripts/setup.sh
 
 echo "✅ Environment setup complete!"
 echo "🚀 Run 'npm run dev' to start the development server"
