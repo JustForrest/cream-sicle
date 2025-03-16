@@ -1,6 +1,13 @@
 #!/bin/bash
 set -e
 
+# At beginning of setup.sh
+if [ "$CODESPACES_PREBUILD" == "true" ]; then
+  echo "Running in prebuild context, skipping environment-specific setup"
+  # Only run performance-critical setup
+else
+  # Run full setup including environment configuration
+
 echo "🔧 Running comprehensive setup script..."
 
 # Check if the script is executable
@@ -40,3 +47,4 @@ fi
 # npx supabase init
 
 echo "✅ Setup completed successfully!"
+fi
