@@ -1,4 +1,3 @@
-/cream-sicle/.eslintrc.js;
 module.exports = {
   root: true,
   env: {
