@@ -54,8 +54,8 @@ EOF
     
     if [ -n "$SUPABASE_URL" ] && [ -n "$SUPABASE_KEY" ]; then
       # Update .env.local with actual values
-      sed -i "s|NEXT_PUBLIC_SUPABASE_URL=.*|NEXT_PUBLIC_SUPABASE_URL=$SUPABASE_URL|g" .env.local
-      sed -i "s|NEXT_PUBLIC_SUPABASE_ANON_KEY=.*|NEXT_PUBLIC_SUPABASE_ANON_KEY=$SUPABASE_KEY|g" .env.local
+      sed -i "s|NEXT_PUBLIC_SUPABASE_URL=.*|NEXT_PUBLIC_SUPABASE_URL=$SUPABASE_URL|g" "$PWD/.env.local"
+      sed -i "s|NEXT_PUBLIC_SUPABASE_ANON_KEY=.*|NEXT_PUBLIC_SUPABASE_ANON_KEY=$SUPABASE_KEY|g" "$PWD/.env.local"
       echo "✅ Updated .env.local with Supabase credentials"
     else
       echo "⚠️ Please update .env.local with your Supabase credentials"
