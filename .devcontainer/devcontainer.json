@@ -69,7 +69,7 @@
       }
     }
   }
-
-  // Uncomment to connect as non-root user
-  // "remoteUser": "node"
+  /* Uncomment to connect as non-root user
+  ,"remoteUser": "node"
+  */
 }
