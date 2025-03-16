@@ -37,7 +37,8 @@
         "GitHub.copilot",
         "github.vscode-pull-request-github",
         "ms-vscode.vscode-typescript",
-        "ms-vscode.js-debug"
+        "ms-vscode.js-debug",
+        "Prisma.prisma"
       ],
       "settings": {
         "editor.formatOnSave": true,
